@@ -6,7 +6,7 @@
     --text-muted: #4A5568;
     --bg-body: #F7FAFC;
     --bg-card: #FFFFFF;
-    --shadow-sm: 0 1px   2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --radius-md: 0.5rem;
@@ -68,11 +68,11 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -85,6 +85,7 @@ img {
 .nav ul li a {
     font-family: 'Prompt', sans-serif;
     font-weight: 500;
+    font-size: 1.25rem;
     color: var(--text-muted);
     position: relative;
 }
@@ -110,7 +111,7 @@ img {
 
 
 .content {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
@@ -145,7 +146,7 @@ img {
 }
 
 .inspi-qoute .quote {
-    font-size: 1.25rem;
+    font-size: 1.50rem;
     font-style: italic;
     color: var(--text-main);
     margin-bottom: 1.5rem;
@@ -156,24 +157,6 @@ img {
     font-size: 1.1rem;
     color: var(--primary-color);
 }
-
-.inspi-qoute .imgdepaiwa {
-    flex: 0 0 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.inspi-qoute .imgdepaiwa img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #fff;
-    box-shadow: var(--shadow-sm);
-}
-
 
 .mission {
     display: grid;
@@ -207,7 +190,7 @@ img {
 .mission p {
     margin-bottom: 1rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1.25rem;
 }
 
 .curriculum {
@@ -216,7 +199,7 @@ img {
 }
 
 .curriculum>h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     display: inline-block;
     position: relative;
@@ -239,12 +222,22 @@ img {
 
 .anu-prin h3,
 .printree h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 1.5rem;
     color: var(--secondary-color);
     text-align: left;
     border-left: 4px solid var(--accent-color);
     padding-left: 1rem;
+}
+
+.anu-prin p,
+.printree p {
+    font-size: 1.25rem;
+}
+
+.anu-prin h4,
+.printree h4 {
+    font-size: 1.5rem;
 }
 
 .anu-prin>div,
@@ -325,4 +318,168 @@ img {
     .logo {
         margin-bottom: 0.5rem;
     }
+}
+
+/*structure.html*/
+.structure-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+
+.course-section {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.course-section:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.course-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-section:hover .course-img img {
+    transform: scale(1.05);
+}
+
+.course-info {
+    padding: 2rem;
+}
+
+.course-info h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.course-info h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.course-info p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+@media (min-width: 900px) {
+    .course-section {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .course-section.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .course-img {
+        flex: 0 0 50%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .course-info {
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Contact Page Styles */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem;
+}
+
+.contact-info {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    background-color: var(--bg-body);
+}
+
+.contact-list li:hover {
+    transform: translateX(10px);
+    background-color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-list .icon {
+    font-size: 1.5rem;
+}
+
+.contact-list a {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.contact-list a:hover {
+    color: var(--primary-color);
 }
